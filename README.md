@@ -18,6 +18,11 @@ It's composed of two main classes:
                            number can be modified in the configuration file) check for new activities and in case store them into the DB 
                            together with the new cursor. Together with the store on the DB the program shows informations on activities that 
                            are stored into the DB.
+- ActivitiesThreadAsyncHTTPClient: The functions are the same of "ActivitiesThread" unless the new one use the AsyncHTTPClient 
+                                    (the source of the project have been under the packages com.ning...) to retrieve the activities. 
+                                    Seen the program now makes async calls I've done a new attribute (statusRunning) used to evaluate if 
+                                    there is a waiting previous call before the new one.
+                                    The JSON parsing has been done with the lib "json_simple-1.1.jar" (already referenced by the project).
 In addition to these core classes there are some help classes:
 - Utility: contains the code for the connection to the DB and for configuration file reading.
 - UserDAO/ActivityDAO: contain the code for the operations (store/retrieve) on the DB, each regarding its object
